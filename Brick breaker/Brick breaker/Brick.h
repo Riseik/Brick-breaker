@@ -14,6 +14,6 @@ public:
 	void Move(float, float) override;
 
 private:
-	int m_health;
+	int m_health = 1;
 };
 
