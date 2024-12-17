@@ -19,5 +19,6 @@ protected:
 	sf::Vector2f m_scale;
 	sf::Texture m_texture;
 	sf::Sprite m_sprite;
+	std::string m_TexturePath;
 };
 

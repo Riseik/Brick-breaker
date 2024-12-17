@@ -12,6 +12,5 @@ public:
 
 private:
 	int m_health;
-	std::string m_TexturePath;
 };
 
