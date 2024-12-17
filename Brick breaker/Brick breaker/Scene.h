@@ -1,10 +1,10 @@
 #pragma once
 #include "AllInclude.h"
-class Brick;
+#include "Brick.h"
 class Scene
 {
 private:
-	std::array<Brick,40> S_bricks;
+	std::array<Brick, 40>  s_Bricks ;
 
 
 public:
