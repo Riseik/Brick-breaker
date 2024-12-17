@@ -1,19 +1,24 @@
 #pragma once
 #include "AllInclude.h"
-class Scene;
-class Ball;
-class Platforme;
+#include "Ball.h"
+#include "Platform.h"
 
+class Scene;
 class SceneManager
 {
 private:
 	std::queue<Scene> sm_Order;
-	//Ball ball;
-	//Platforme platform;
+	Ball ball;
+	Platform platform;
 
 
 
 public:
-
+	SceneManager();
+	~SceneManager();
+	void CreateNextScene();
+	void ChangeScene();
+	Brick* GetBrick();
+	Platform* GetPlatform();
 };
 
