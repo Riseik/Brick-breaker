@@ -23,4 +23,9 @@ void Object::LoadSprite()
 	m_sprite.setTexture(m_texture);
 }
 
+sf::Sprite Object::GetSprite()
+{
+	return m_sprite;
+}
+
 

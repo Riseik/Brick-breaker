@@ -10,6 +10,7 @@ public:
 
 	void LoadTexture(std::string);
 	void LoadSprite();
+	sf::Sprite GetSprite();
 	virtual void Move() = 0;
 
 protected:
