@@ -8,7 +8,8 @@ Platform::Platform(float x, float y)
 	LoadTexture(m_TexturePath);
 }
 
-void Platform::Move(float, float)
+void Platform::Move(float x, float a)
 {
+	m_sprite.setPosition(x, m_pos.y);
 }
 
