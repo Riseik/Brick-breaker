@@ -24,6 +24,7 @@ void Object::LoadSprite()
 {
 	m_sprite.setTexture(m_texture);
 	m_sprite.setPosition(m_pos);
+	m_sprite.setScale(m_scale);
 }
 
 sf::Sprite Object::GetSprite()

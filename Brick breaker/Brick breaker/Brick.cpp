@@ -13,6 +13,6 @@ void Brick::DestroyBrick()
 
 }
 
-void Brick::Move()
+void Brick::Move(float x, float y)
 {
 }

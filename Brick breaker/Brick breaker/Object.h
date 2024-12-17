@@ -11,7 +11,7 @@ public:
 	void LoadTexture(std::string);
 	void LoadSprite();
 	sf::Sprite GetSprite();
-	virtual void Move() = 0;
+	virtual void Move(float, float) = 0;
 
 protected:
 	sf::Color m_color;

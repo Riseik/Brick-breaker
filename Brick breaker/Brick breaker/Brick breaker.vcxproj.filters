@@ -67,5 +67,11 @@
     <Image Include="ressource\metal_brick.jpg">
       <Filter>Fichiers de ressources</Filter>
     </Image>
+    <Image Include="..\..\..\..\..\Downloads\metal_brick.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+    <Image Include="ressource\metal_brick.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
   </ItemGroup>
 </Project>

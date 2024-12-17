@@ -147,7 +147,9 @@
     <ClInclude Include="Platform.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\..\..\..\Downloads\metal_brick.png" />
     <Image Include="ressource\metal_brick.jpg" />
+    <Image Include="ressource\metal_brick.png" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="const.h" />
