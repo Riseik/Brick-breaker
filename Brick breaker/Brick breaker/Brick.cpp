@@ -8,10 +8,25 @@ Brick::Brick(float x, float y)
 	LoadTexture(m_TexturePath);
 }
 
-void Brick::DestroyBrick()
+Brick::~Brick()
 {
-
+	m_health = NULL;
 }
+
+bool Brick::BrickDamage()		//reduis la vie de la brick et renvoie true si elle doit etre detruite
+{
+	m_health--;
+	if (m_health <= 0)
+		return true;
+
+	return false;
+}
+
+void Brick::Destroy()			//APPELLER CETTE FONCTION APRES AVOIR RETIRER L'OBJET DE LA SCENE LIST
+{
+	delete[] this;
+}
+
 
 void Brick::Move(float x, float y)
 {

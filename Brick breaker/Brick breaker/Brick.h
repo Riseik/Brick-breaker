@@ -6,7 +6,10 @@ class Brick : public Object
 {
 public:
 	Brick(float, float);
-	void DestroyBrick();
+	~Brick();
+
+	bool BrickDamage();
+	void Destroy();
 	void Move(float, float) override;
 
 private:
