@@ -6,10 +6,12 @@ Platform::Platform(float x, float y)
 	m_pos = { x,y };
 	m_scale = { 0.3f, 0.05f };
 	LoadTexture(m_TexturePath);
+	m_sprite.setOrigin(m_texture.getSize().x / 2, m_texture.getSize().y / 2);
 }
 
 void Platform::Move(float x, float a)
 {
-	m_sprite.setPosition(x, m_pos.y);
+	if (x > m_texture.getSize().x * m_scale.x / 2 && x < WINDOW_WIDTH - m_texture.getSize().x * m_scale.x / 2)
+		m_sprite.setPosition(x, m_pos.y);
 }
 
