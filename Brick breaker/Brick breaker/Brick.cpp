@@ -1,5 +1,9 @@
 #include "Brick.h"
 
+Brick::Brick()
+{
+}
+
 Brick::Brick(float x, float y)
 {
 	m_TexturePath = "metal_brick.jpg";
