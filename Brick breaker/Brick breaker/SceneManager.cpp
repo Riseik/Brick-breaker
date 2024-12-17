@@ -24,6 +24,6 @@ Ball* SceneManager::GetBall()
 
 Platform* SceneManager::GetPlatform()
 {
-	//return &platform;
-	return nullptr;
+	return &platform;
+
 }

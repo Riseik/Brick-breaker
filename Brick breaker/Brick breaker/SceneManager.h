@@ -9,7 +9,7 @@ class SceneManager
 private:
 	std::queue<Scene> sm_Order;
 	Ball ball;
-	//Platform platform;
+	Platform platform;
 
 
 
