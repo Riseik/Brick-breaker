@@ -7,7 +7,7 @@ class Brick : public Object
 public:
 	Brick(float, float);
 	void DestroyBrick();
-	void Move() override;
+	void Move(float, float) override;
 
 private:
 	int m_health;

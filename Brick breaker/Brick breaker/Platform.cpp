@@ -2,9 +2,13 @@
 
 Platform::Platform(float x, float y)
 {
-	m_TexturePath = "metal_brick.jpg";
+	m_TexturePath = "ressource/metal_brick.png";
 	m_pos = { x,y };
-	m_scale = { 100,50 };
+	m_scale = { 0.3f, 0.05f };
 	LoadTexture(m_TexturePath);
+}
+
+void Platform::Move(float, float)
+{
 }
 

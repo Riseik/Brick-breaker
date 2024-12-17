@@ -1,10 +1,12 @@
 #include <SFML/Graphics.hpp>
+#include "Platform.h"
 
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(800, 800), "SFML works!");
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
+    Platform p(250, 700);
 
     while (window.isOpen())
     {
@@ -16,7 +18,7 @@ int main()
         }
         
         window.clear();
-        window.draw(shape);
+        window.draw(p.GetSprite());
         window.display();
     }
 
