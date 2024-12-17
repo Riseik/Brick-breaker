@@ -2,10 +2,10 @@
 
 Brick::Brick(float x, float y)
 {
+	m_TexturePath = "metal_brick.jpg";
 	m_pos = { x,y };
-	m_scale = { 1,1 };
+	m_scale = { 80,40 };
 	LoadTexture(m_TexturePath);
-	LoadSprite();
 }
 
 void Brick::DestroyBrick()

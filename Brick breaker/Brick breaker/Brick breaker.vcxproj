@@ -145,6 +145,9 @@
     <ClInclude Include="Object.h" />
     <ClInclude Include="Platform.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="ressource\metal_brick.jpg" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
