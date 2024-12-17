@@ -24,6 +24,9 @@
     <ClCompile Include="main.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="Gameloop.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
     <ClCompile Include="Ball.cpp">
       <Filter>Fichiers sources\Object</Filter>
     </ClCompile>
@@ -38,6 +41,15 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Gameloop.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="const.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="sfml.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
     <ClInclude Include="Object.h">
       <Filter>Fichiers d%27en-tête\Object</Filter>
     </ClInclude>
@@ -52,9 +64,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="ressource\metal_brick.jpg">
-      <Filter>Fichiers de ressources</Filter>
-    </Image>
     <Image Include="..\..\..\..\..\Downloads\metal_brick.png">
       <Filter>Fichiers de ressources</Filter>
     </Image>

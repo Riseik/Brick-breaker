@@ -1,5 +1,6 @@
 #pragma once
-#include <SFML/Graphics.hpp>
+#include "sfml.h"
+#include "const.h"
 #include "iostream"
 
 class Object
