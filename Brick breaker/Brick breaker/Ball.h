@@ -1,5 +1,10 @@
 #pragma once
-class Ball
+#include "Object.h"
+
+class Ball : public Object
 {
+public: 
+	void Move(float, float) override;
+
 };
 
