@@ -39,6 +39,12 @@
     <ClCompile Include="Platform.cpp">
       <Filter>Fichiers sources\Object</Filter>
     </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Gameloop.h">
@@ -62,12 +68,18 @@
     <ClInclude Include="Platform.h">
       <Filter>Fichiers d%27en-tête\Object</Filter>
     </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\..\Downloads\metal_brick.png">
+    <Image Include="ressource\metal_brick.png">
       <Filter>Fichiers de ressources</Filter>
     </Image>
-    <Image Include="ressource\metal_brick.png">
+    <Image Include="ressource\TennisBall.png">
       <Filter>Fichiers de ressources</Filter>
     </Image>
   </ItemGroup>
