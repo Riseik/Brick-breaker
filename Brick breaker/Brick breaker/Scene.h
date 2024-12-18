@@ -13,7 +13,7 @@ public:
 	void LoadScene();
 	void CreateBricks();
 
-
+	std::array<Brick, 40>* GetBrick();
 
 
 };

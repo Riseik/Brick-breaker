@@ -2,17 +2,17 @@
 
 Brick::Brick()
 {
-	m_TexturePath = "metal_brick.jpg";
+	m_TexturePath = "ressource/metal_brick.png";
 	m_pos = { 0, 0 };
-	m_scale = { 80,40 };
+	m_scale = { BRICK_WIDTH,BRICK_HEIGHT };
 	LoadTexture(m_TexturePath);
 }
 
 Brick::Brick(float x, float y)
 {
-	m_TexturePath = "metal_brick.jpg";
+	m_TexturePath = "ressource/metal_brick.png";
 	m_pos = { x,y };
-	m_scale = { 80,40 };
+	m_scale = { BRICK_WIDTH,BRICK_HEIGHT };
 	LoadTexture(m_TexturePath);
 }
 

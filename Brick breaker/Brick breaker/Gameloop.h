@@ -1,7 +1,8 @@
 #pragma once
-#include "const.h"
-#include "sfml.h"
+#include "AllInclude.h"
 #include "Platform.h"
+#include "SceneManager.h"
+
 //include la classe scene
 //include la classe object
 
@@ -17,7 +18,9 @@ public:
 
 private:
 	sf::RenderWindow* window;
-	Platform* p = new Platform(WINDOW_WIDTH / 2, WINDOW_HEIGHT - WINDOW_HEIGHT / 10);
+	Platform* gl_platform = new Platform(WINDOW_WIDTH / 2, WINDOW_HEIGHT - WINDOW_HEIGHT / 10);
 	sf::CircleShape shape; // sera supprimé lors du merge des objets
+	SceneManager gl_sceneManager;
+	Ball* gl_Ball;
 };
 

@@ -3,6 +3,15 @@
 SceneManager::SceneManager()
 {
 	ball = Ball();
+	platform = Platform();
+	CreateNextScene();
+}
+
+SceneManager::SceneManager(Ball* ballpt , Platform* platformpt)
+{
+	ball = Ball();
+	platform = Platform();
+	CreateNextScene();
 }
 
 SceneManager::~SceneManager()
@@ -11,7 +20,8 @@ SceneManager::~SceneManager()
 
 void SceneManager::CreateNextScene()
 {
-	sm_Order.push(Scene());
+	Scene a = Scene();
+	sm_Order.push(a);
 	sm_Order.back().CreateBricks();
 }
 
@@ -30,4 +40,9 @@ Platform* SceneManager::GetPlatform()
 {
 	return &platform;
 
+}
+
+Scene* SceneManager::GetActualScene()
+{
+	return &sm_Order.front();
 }

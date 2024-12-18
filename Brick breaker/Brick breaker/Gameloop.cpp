@@ -4,6 +4,7 @@ Gameloop::Gameloop(sf::RenderWindow* window)
 {
 	this->window = window;
 	SetSprites();
+	gl_sceneManager = SceneManager();
 	Loop();
 }
 
@@ -39,13 +40,16 @@ void Gameloop::ManageEvents()
 		if (event.type == sf::Event::MouseMoved) {
 			sf::Vector2i pixelPos = sf::Mouse::getPosition(*window);
 			sf::Vector2f worldPos = window->mapPixelToCoords(pixelPos);
-			p->Move(worldPos.x, 0);
+			gl_platform->Move(worldPos.x, 0);
 		}
 	}
 }
 
 void Gameloop::Draw()
 {
-	window->draw(shape);
-	window->draw(p->GetSprite());
+	//window->draw(shape);
+	window->draw(gl_platform->GetSprite());
+	for (int i = 0; i < 1; i++) {
+		window->draw(gl_sceneManager.GetActualScene()->GetBrick()->at(i).GetSprite());
+	}
 }
