@@ -10,4 +10,4 @@ constexpr unsigned int WINDOW_WIDTH = 800;
 constexpr unsigned int BRICK_WIDTH = 80;
 constexpr unsigned int BRICK_HEIGHT = 40;
 
-constexpr unsigned int NUMBERBRICK = 40;
+constexpr unsigned int NUMBERBRICK = 10;

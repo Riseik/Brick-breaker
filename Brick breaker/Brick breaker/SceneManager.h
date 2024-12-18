@@ -22,5 +22,6 @@ public:
 	Ball* GetBall();
 	Platform* GetPlatform();
 	Scene* GetActualScene();
+	Brick test;
 };
 
