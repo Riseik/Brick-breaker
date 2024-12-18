@@ -3,7 +3,7 @@
 Brick::Brick()
 {
 	m_TexturePath = "ressource/metal_brick.png";
-	m_pos = { 0, 0 };
+	m_pos = { 10, 10 };
 	m_scale = { 0.001f*BRICK_WIDTH,0.001f * BRICK_HEIGHT };
 	LoadTexture(m_TexturePath);
 }

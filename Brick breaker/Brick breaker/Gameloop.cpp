@@ -4,7 +4,7 @@ Gameloop::Gameloop(sf::RenderWindow* window)
 {
 	this->window = window;
 	SetSprites();
-	gl_sceneManager = SceneManager();
+	gl_sceneManager = new SceneManager();
 	Loop();
 }
 
@@ -49,7 +49,7 @@ void Gameloop::Draw()
 {
 	//window->draw(shape);
 	window->draw(gl_platform->GetSprite());
-	window->draw(gl_sceneManager.test.GetSprite());
+	window->draw(gl_sceneManager->test->GetSprite());
 	//gl_sceneManager.GetActualScene()->DrawBrick(window);
 	
 }

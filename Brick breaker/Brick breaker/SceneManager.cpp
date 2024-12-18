@@ -4,7 +4,7 @@ SceneManager::SceneManager()
 {
 	ball = Ball();
 	platform = Platform();
-	test = Brick();
+	test = new Brick();
 	CreateNextScene();
 }
 

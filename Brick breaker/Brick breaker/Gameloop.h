@@ -20,7 +20,7 @@ private:
 	sf::RenderWindow* window;
 	Platform* gl_platform = new Platform(WINDOW_WIDTH / 2, WINDOW_HEIGHT - WINDOW_HEIGHT / 10);
 	sf::CircleShape shape; // sera supprimé lors du merge des objets
-	SceneManager gl_sceneManager;
+	SceneManager* gl_sceneManager;
 	Ball* gl_Ball;
 };
 
