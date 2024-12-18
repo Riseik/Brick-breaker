@@ -162,7 +162,7 @@
     <ClInclude Include="sfml.h" />
   </ItemGroup>
   <ItemGroup>
-    <Font Include="ressource\Inlanders Demo.otf" />
+    <Font Include="ressource\InlandersDemo.otf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
