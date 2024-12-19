@@ -45,6 +45,9 @@
     <ClCompile Include="SceneManager.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="Score.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Gameloop.h">
@@ -71,6 +74,12 @@
     <ClInclude Include="globals.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="Score.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="sfml.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="ressource\metal_brick.png">
@@ -79,6 +88,13 @@
     <Image Include="ressource\TennisBall.png">
       <Filter>Fichiers de ressources</Filter>
     </Image>
+    <Image Include="ressource\WoodenBox.png">
+      <Filter>Fichiers de ressources</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="ressource\InlandersDemo.otf" />
+    <Font Include="ressource\SquareOne.ttf" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="ressource\Inlanders Demo.otf" />

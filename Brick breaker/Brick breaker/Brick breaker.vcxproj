@@ -110,7 +110,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>../../SFML-2.6.2/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics-s-d.lib;sfml-window-s-d.lib;sfml-system-s-d.lib;opengl32.lib;winmm.lib;gdi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics-s-d.lib;sfml-window-s-d.lib;sfml-system-s-d.lib;opengl32.lib;winmm.lib;gdi32.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -141,6 +141,7 @@
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Platform.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="Score.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="globals.h" />
@@ -154,12 +155,17 @@
   <ItemGroup>
     <Image Include="ressource\metal_brick.png" />
     <Image Include="ressource\TennisBall.png" />
+    <Image Include="ressource\WoodenBox.png" />
+    <Image Include="ressource\WoodenBoxResize.png" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Gameloop.h" />
+    <ClInclude Include="Score.h" />
+    <ClInclude Include="sfml.h" />
   </ItemGroup>
   <ItemGroup>
-    <Font Include="ressource\Inlanders Demo.otf" />
+    <Font Include="ressource\InlandersDemo.otf" />
+    <Font Include="ressource\SquareOne.ttf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

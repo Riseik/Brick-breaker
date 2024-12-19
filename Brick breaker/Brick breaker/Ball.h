@@ -5,7 +5,7 @@
 
 class Ball : public Object
 {
-public: 
+public:
 	Ball();
 	~Ball();
 	void CheckScreenCollision();
@@ -17,4 +17,3 @@ public:
 private:
 	sf::Vector2f m_speed = { BALL_SPEED_X, BALL_SPEED_Y };
 };
-

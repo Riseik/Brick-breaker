@@ -1,5 +1,5 @@
 #include "Scene.h"
-#include"globals.h"
+#include "globals.h"
 
 Scene::Scene()
 {
@@ -42,4 +42,3 @@ std::vector<Brick*>* Scene::GetBrick()
 {
 	return &s_Bricks;
 }
-

@@ -2,7 +2,7 @@
 
 Brick::Brick()
 {
-	m_TexturePath = "ressource/metal_brick.png";
+	m_TexturePath = "ressource/WoodenBoxResize.png";
 	m_pos = { 10, 10 };
 	m_scale = { 0.005f*BRICK_WIDTH,0.005f * BRICK_HEIGHT };
 	LoadTexture(m_TexturePath);
@@ -10,7 +10,7 @@ Brick::Brick()
 
 Brick::Brick(float x, float y)
 {
-	m_TexturePath = "ressource/metal_brick.png";
+	m_TexturePath = "ressource/WoodenBoxResize.png";
 	m_pos = { x,y };
 	LoadTexture(m_TexturePath);
 	m_sprite.setScale({ WINDOW_WIDTH / 10.f / (float)m_texture.getSize().x, WINDOW_HEIGHT / 15.f / (float)m_texture.getSize().y });
