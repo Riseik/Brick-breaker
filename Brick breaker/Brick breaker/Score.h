@@ -13,7 +13,6 @@ public:
 	void LoadText();
 	std::vector<sf::Text> GetScoreList();
 
-
 private:
 
 	std::vector<sf::Text> m_TextList;
@@ -23,7 +22,7 @@ private:
 	sf::Font font;
 
 	int m_score = 0;
-	int m_level = 0;
+	int m_level = 1;
 
 };
 
