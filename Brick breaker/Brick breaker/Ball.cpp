@@ -40,21 +40,55 @@ void Ball::CheckPlatformCollision(sf::Sprite spritePlatform)
 
 bool Ball::CheckBrickCollision(Brick* brick)
 {
-	if (m_sprite.getGlobalBounds().intersects(brick->GetSprite().getGlobalBounds()) )
-	{
-		//m_speed.y = -m_speed.y;
+	//if (m_sprite.getGlobalBounds().intersects(brick->GetSprite().getGlobalBounds()) )
+	//{
+	//	//m_speed.y = -m_speed.y;
 
-		int sizePlatformX = brick->GetSprite().getTexture()->getSize().x * brick->GetSprite().getScale().x;
-		float relativePosition = ((m_pos.x - brick->GetSprite().getPosition().x) / (sizePlatformX / 2)) / 2;
-		float speedIncrease = 0.1f;
-		m_speed.x = m_speed.x + speedIncrease * relativePosition;
-		if (m_speed.x > 0.1f)
-			m_speed.x = 0.1f;
-		if (m_speed.x < -0.1f)
-			m_speed.x = -0.1f;
-		std::cout << "hit\n";
+	//	/*int sizePlatformX = brick->GetSprite().getTexture()->getSize().x * brick->GetSprite().getScale().x;
+	//	float relativePosition = ((m_pos.x - brick->GetSprite().getPosition().x) / (sizePlatformX / 2)) / 2;
+	//	float speedIncrease = 0.1f;
+	//	m_speed.x = m_speed.x + speedIncrease * relativePosition;
+	//	if (m_speed.x > 0.1f)
+	//		m_speed.x = 0.1f;
+	//	if (m_speed.x < -0.1f)
+	//		m_speed.x = -0.1f;*/
+	//	std::cout << "hit\n";
+	//	return true;
+	//}
+
+	float ballX = m_pos.x;
+	float ballY = m_pos.y;
+	float ballW = m_texture.getSize().x * m_scale.x;
+	float ballH = m_texture.getSize().y * m_scale.y;
+
+	float brickX = brick->GetSprite().getPosition().x;
+	float brickY = brick->GetSprite().getPosition().y;
+	float brickW = brick->GetSprite().getTexture()->getSize().x * brick->GetSprite().getScale().x;
+	float brickH = brick->GetSprite().getTexture()->getSize().y * brick->GetSprite().getScale().y;
+
+	if (ballX < brickX + brickW && ballX + ballW > brickX && ballY < brickY + brickH && ballH + ballY > brickY)
+	{
+		float overlapX;
+		float overlapY;
+
+		if (ballX < brickX)
+			overlapX = ballX + ballW - brickX;
+		else
+			overlapX = brickX + brickW - ballX;
+
+		if (ballY > brickY)
+			overlapY = ballY + ballH - brickY;
+		else
+			overlapY = brickY + brickH - ballY;
+
+		if (overlapX < overlapY)
+			m_speed.y = -m_speed.y;
+		else
+			m_speed.x = -m_speed.x;
+
 		return true;
 	}
+
 	return false;
 }
 
