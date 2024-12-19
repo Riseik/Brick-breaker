@@ -21,7 +21,7 @@ private:
 	sf::Text m_textLevel;
 	sf::Font font;
 
-	int m_score = 0;
+	int *m_score = new int();
 	int m_level = 1;
 
 };

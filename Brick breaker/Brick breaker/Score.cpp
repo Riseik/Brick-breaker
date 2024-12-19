@@ -6,7 +6,7 @@ Score::Score()
 	m_textScore.setPosition(20,40);
 	m_textTitle.setPosition(WINDOW_WIDTH / 2 - 100, 20);
 
-
+	*m_score = 50;
 	/*
 	m_TextList->push_back(m_textLevel);
 	m_TextList->push_back(m_textScore);
@@ -23,8 +23,9 @@ Score::Score()
 
 void Score::AddScorePoint(int point)
 {
-	m_score += point;
-	m_textScore.setString("Score : " + m_score);
+	*m_score += point;
+	m_textScore.setString("Score : " + *m_score);
+	std::cout << *(m_textScore.getString().toUtf8().c_str()) << std::endl;
 }
 
 void Score::ChangeLevel()
@@ -49,7 +50,7 @@ void Score::LoadFont()
 void Score::LoadText()
 {
 	m_textLevel.setString("Level : " + std::to_string(m_level));
-	m_textScore.setString("Score : " + std::to_string(m_score));
+	m_textScore.setString("Score : " + std::to_string(*m_score));
 	m_textTitle.setString("BRICK BREAKER");
 
 	m_textTitle.setFillColor(sf::Color::Red);

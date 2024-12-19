@@ -23,6 +23,7 @@ void Gameloop::Loop()
 					if (brick->BrickDamage()) {
 						gl_sceneManager->GetActualScene()->GetBrick()->erase(std::remove(gl_sceneManager->GetActualScene()->GetBrick()->begin(), gl_sceneManager->GetActualScene()->GetBrick()->end(), brick), gl_sceneManager->GetActualScene()->GetBrick()->end());
 						brick->Destroy();
+						score->AddScorePoint(50);
 						break;
 					}
 				}
@@ -31,6 +32,7 @@ void Gameloop::Loop()
 		else {
 			gl_sceneManager->ChangeScene();
 			b->Move(BALL_POS_X, BALL_POS_Y);
+			score->ChangeLevel();
 		}
 		window->clear();
 		Draw();
@@ -67,5 +69,5 @@ void Gameloop::Draw()
 	window->draw(b->GetSprite());
 
 	for (sf::Text text : score->GetScoreList())
-	window->draw(text);
+		window->draw(text);
 }
