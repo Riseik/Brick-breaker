@@ -23,7 +23,7 @@ void Scene::CreateBricks()
 	for (int i = 0; i < NUMBERBRICK; i++) {
 		if (x >= WINDOW_WIDTH) {
 			x = 0;
-			y += BRICK_HEIGHT - BRICK_HEIGHT * 0.1f;
+			y += BRICK_HEIGHT ;
 		}
 		s_Bricks.at(i) = new Brick(x, y);
 		x += BRICK_WIDTH;
