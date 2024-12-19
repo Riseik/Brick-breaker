@@ -11,17 +11,17 @@ public:
 	void ChangeLevel();
 	void LoadFont();
 	void LoadText();
-	std::vector<sf::Text> GetScoreList();
+	std::vector<sf::Text*> GetScoreList();
 
 private:
 
-	std::vector<sf::Text> m_TextList;
+	std::vector<sf::Text*> m_TextList;
 	sf::Text m_textTitle;
 	sf::Text m_textScore;
 	sf::Text m_textLevel;
 	sf::Font font;
 
-	int *m_score = new int();
+	int m_score = 0;
 	int m_level = 1;
 
 };

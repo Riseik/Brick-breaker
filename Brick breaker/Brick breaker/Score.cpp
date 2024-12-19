@@ -6,7 +6,6 @@ Score::Score()
 	m_textScore.setPosition(20,40);
 	m_textTitle.setPosition(WINDOW_WIDTH / 2 - 100, 20);
 
-	*m_score = 50;
 	/*
 	m_TextList->push_back(m_textLevel);
 	m_TextList->push_back(m_textScore);
@@ -15,23 +14,22 @@ Score::Score()
 
 	LoadFont();
 	LoadText();
-	m_TextList.push_back(m_textTitle);
-	m_TextList.push_back(m_textLevel);
-	m_TextList.push_back(m_textScore);
+	m_TextList.push_back(&m_textTitle);
+	m_TextList.push_back(&m_textLevel);
+	m_TextList.push_back(&m_textScore);
 
 }
 
 void Score::AddScorePoint(int point)
 {
-	*m_score += point;
-	m_textScore.setString("Score : " + *m_score);
-	std::cout << *(m_textScore.getString().toUtf8().c_str()) << std::endl;
+	m_score += point;
+	m_textScore.setString("Score : " + std::to_string(m_score));
 }
 
 void Score::ChangeLevel()
 {
 	m_level++;
-	m_textLevel.setString("Level : " + m_level);
+	m_textLevel.setString("Level : " + std::to_string(m_level));
 }
 
 void Score::LoadFont()
@@ -50,13 +48,13 @@ void Score::LoadFont()
 void Score::LoadText()
 {
 	m_textLevel.setString("Level : " + std::to_string(m_level));
-	m_textScore.setString("Score : " + std::to_string(*m_score));
+	m_textScore.setString("Score : " + std::to_string(m_score));
 	m_textTitle.setString("BRICK BREAKER");
 
 	m_textTitle.setFillColor(sf::Color::Red);
 }
 
-std::vector<sf::Text> Score::GetScoreList()
+std::vector<sf::Text*> Score::GetScoreList()
 {
 	return m_TextList;
 }

@@ -68,6 +68,6 @@ void Gameloop::Draw()
 	window->draw(gl_platform->GetSprite());
 	window->draw(b->GetSprite());
 
-	for (sf::Text text : score->GetScoreList())
-		window->draw(text);
+	for (sf::Text* text : score->GetScoreList())
+		window->draw(*text);
 }
