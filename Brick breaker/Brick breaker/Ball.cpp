@@ -142,4 +142,5 @@ void Ball::Move()
 void Ball::Move(float x, float y)
 {
     m_pos = { x, y };
+    m_sprite.setPosition(m_pos);
 }

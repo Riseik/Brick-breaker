@@ -23,5 +23,8 @@ private:
 	SceneManager* gl_sceneManager;
 	Ball* gl_Ball;
 	Ball* b = new Ball();
+
+	bool pause = false;
+	bool start = false;
 };
 
