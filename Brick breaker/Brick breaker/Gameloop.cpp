@@ -3,7 +3,6 @@
 Gameloop::Gameloop(sf::RenderWindow* window)
 {
 	this->window = window;
-	SetSprites();
 	gl_sceneManager = new SceneManager();
 	Loop();
 }
@@ -15,7 +14,7 @@ void Gameloop::Loop()
 
 		b->Move();
 		b->CheckScreenCollision();
-		b->CheckPlatformCollision(p->GetSprite());
+		b->CheckPlatformCollision(gl_platform->GetSprite());
 
 		window->clear();
 		Draw();
@@ -48,6 +47,6 @@ void Gameloop::Draw()
 	}
 	//gl_sceneManager.GetActualScene()->DrawBrick(window);
 	
-	window->draw(p->GetSprite());
+	window->draw(gl_platform->GetSprite());
 	window->draw(b->GetSprite());
 }

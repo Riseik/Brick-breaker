@@ -22,7 +22,6 @@ private:
 	sf::CircleShape shape; // sera supprim� lors du merge des objets
 	SceneManager* gl_sceneManager;
 	Ball* gl_Ball;
-	Platform* p = new Platform(WINDOW_WIDTH / 2, WINDOW_HEIGHT - WINDOW_HEIGHT / 10);
 	Ball* b = new Ball();
 };
 
