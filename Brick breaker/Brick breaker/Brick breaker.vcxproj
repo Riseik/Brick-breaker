@@ -156,6 +156,7 @@
     <Image Include="ressource\metal_brick.png" />
     <Image Include="ressource\TennisBall.png" />
     <Image Include="ressource\WoodenBox.png" />
+    <Image Include="ressource\WoodenBoxResize.png" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Gameloop.h" />
