@@ -4,7 +4,7 @@ Brick::Brick()
 {
 	m_TexturePath = "ressource/metal_brick.png";
 	m_pos = { 10, 10 };
-	m_scale = { 0.001f*BRICK_WIDTH,0.001f * BRICK_HEIGHT };
+	m_scale = { 0.005f*BRICK_WIDTH,0.005f * BRICK_HEIGHT };
 	LoadTexture(m_TexturePath);
 }
 
@@ -12,8 +12,11 @@ Brick::Brick(float x, float y)
 {
 	m_TexturePath = "ressource/metal_brick.png";
 	m_pos = { x,y };
-	m_scale = { BRICK_WIDTH,BRICK_HEIGHT };
+	//m_scale = { BRICK_WIDTH, BRICK_HEIGHT };
+	m_scale = { 0.001f * BRICK_WIDTH,0.001f * BRICK_HEIGHT };
 	LoadTexture(m_TexturePath);
+	//sf::Vector2f scale = m_sprite.getScale();
+	//m_sprite.setScale(sf::Vector2f(-scale.x, -scale.y));
 }
 
 Brick::~Brick()

@@ -4,7 +4,7 @@
 class Scene
 {
 private:
-	std::array<Brick, NUMBERBRICK>  s_Bricks ;
+	std::array<Brick*, NUMBERBRICK>  s_Bricks ;
 
 
 public:

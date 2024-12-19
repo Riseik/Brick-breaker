@@ -49,7 +49,9 @@ void Gameloop::Draw()
 {
 	//window->draw(shape);
 	window->draw(gl_platform->GetSprite());
-	window->draw(gl_sceneManager->test->GetSprite());
+	for (int i = 0; i < NUMBERBRICK; i++) {
+		window->draw(gl_sceneManager->GetActualScene()->GetBrick(i)->GetSprite());
+	}
 	//gl_sceneManager.GetActualScene()->DrawBrick(window);
 	
 }
