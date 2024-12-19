@@ -28,7 +28,7 @@ void Ball::CheckPlatformCollision(sf::Sprite spritePlatform)
 		m_speed.y = -m_speed.y;
 
 		int sizePlatformX = spritePlatform.getTexture()->getSize().x * spritePlatform.getScale().x;
-		float relativePosition = ((m_pos.x - spritePlatform.getPosition().x) / (sizePlatformX / 2))/2;
+		float relativePosition = ((m_pos.x - spritePlatform.getPosition().x) / (sizePlatformX / 2));
 		float speedIncrease = 0.1f;
 		m_speed.x = m_speed.x + speedIncrease * relativePosition;
 		if (m_speed.x > 0.1f)
