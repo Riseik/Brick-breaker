@@ -38,59 +38,113 @@ void Ball::CheckPlatformCollision(sf::Sprite spritePlatform)
 	}
 }
 
+//bool Ball::CheckBrickCollision(Brick* brick)
+//{
+//	//if (m_sprite.getGlobalBounds().intersects(brick->GetSprite().getGlobalBounds()) )
+//	//{
+//	//	//m_speed.y = -m_speed.y;
+//
+//	//	/*int sizePlatformX = brick->GetSprite().getTexture()->getSize().x * brick->GetSprite().getScale().x;
+//	//	float relativePosition = ((m_pos.x - brick->GetSprite().getPosition().x) / (sizePlatformX / 2)) / 2;
+//	//	float speedIncrease = 0.1f;
+//	//	m_speed.x = m_speed.x + speedIncrease * relativePosition;
+//	//	if (m_speed.x > 0.1f)
+//	//		m_speed.x = 0.1f;
+//	//	if (m_speed.x < -0.1f)
+//	//		m_speed.x = -0.1f;*/
+//	//	std::cout << "hit\n";
+//	//	return true;
+//	//}
+//
+//	float ballX = m_pos.x;
+//	float ballY = m_pos.y;
+//	float ballW = m_texture.getSize().x * m_scale.x;
+//	float ballH = m_texture.getSize().y * m_scale.y;
+//
+//	float brickX = brick->GetSprite().getPosition().x;
+//	float brickY = brick->GetSprite().getPosition().y;
+//	float brickW = brick->GetSprite().getTexture()->getSize().x * brick->GetSprite().getScale().x;
+//	float brickH = brick->GetSprite().getTexture()->getSize().y * brick->GetSprite().getScale().y;
+//
+//	if (ballX < brickX + brickW && ballX + ballW > brickX && ballY < brickY + brickH && ballH + ballY > brickY)
+//	{
+//		float overlapX;
+//		float overlapY;
+//
+//		if (ballX < brickX)
+//			overlapX = ballX + ballW - brickX;
+//		else
+//			overlapX = brickX + brickW - ballX;
+//
+//		if (ballY > brickY)
+//			overlapY = ballY + ballH - brickY;
+//		else
+//			overlapY = brickY + brickH - ballY;
+//
+//		if (overlapX < overlapY)
+//			m_speed.y = -m_speed.y;
+//		else
+//			m_speed.x = -m_speed.x;
+//
+//		return true;
+//	}
+//
+//	return false;
+//}
+
+
 bool Ball::CheckBrickCollision(Brick* brick)
 {
-	//if (m_sprite.getGlobalBounds().intersects(brick->GetSprite().getGlobalBounds()) )
-	//{
-	//	//m_speed.y = -m_speed.y;
+    sf::FloatRect ballBounds = m_sprite.getGlobalBounds();
+    sf::FloatRect brickBounds = brick->GetSprite().getGlobalBounds();
 
-	//	/*int sizePlatformX = brick->GetSprite().getTexture()->getSize().x * brick->GetSprite().getScale().x;
-	//	float relativePosition = ((m_pos.x - brick->GetSprite().getPosition().x) / (sizePlatformX / 2)) / 2;
-	//	float speedIncrease = 0.1f;
-	//	m_speed.x = m_speed.x + speedIncrease * relativePosition;
-	//	if (m_speed.x > 0.1f)
-	//		m_speed.x = 0.1f;
-	//	if (m_speed.x < -0.1f)
-	//		m_speed.x = -0.1f;*/
-	//	std::cout << "hit\n";
-	//	return true;
-	//}
+    // Vérifier si la balle entre en collision avec la brique
+    if (ballBounds.intersects(brickBounds))
+    {
+        float ballCenterX = ballBounds.left + ballBounds.width / 2;
+        float ballCenterY = ballBounds.top + ballBounds.height / 2;
+        float brickCenterX = brickBounds.left + brickBounds.width / 2;
+        float brickCenterY = brickBounds.top + brickBounds.height / 2;
 
-	float ballX = m_pos.x;
-	float ballY = m_pos.y;
-	float ballW = m_texture.getSize().x * m_scale.x;
-	float ballH = m_texture.getSize().y * m_scale.y;
+        // Cas où la balle touche les deux côtés horizontalement (gauche et droite)
+        if (ballCenterX > brickBounds.left && ballCenterX < brickBounds.left + brickBounds.width)
+        {
+            if (ballBounds.top + ballBounds.height > brickBounds.top && ballBounds.top < brickBounds.top + brickBounds.height)
+            {
+                m_speed.x = -m_speed.x; 
+            }
+        }
 
-	float brickX = brick->GetSprite().getPosition().x;
-	float brickY = brick->GetSprite().getPosition().y;
-	float brickW = brick->GetSprite().getTexture()->getSize().x * brick->GetSprite().getScale().x;
-	float brickH = brick->GetSprite().getTexture()->getSize().y * brick->GetSprite().getScale().y;
+        // Cas où la balle touche les deux côtés verticalement (haut et bas)
+        if (ballCenterY > brickBounds.top && ballCenterY < brickBounds.top + brickBounds.height)
+        {
+            if (ballBounds.left + ballBounds.width > brickBounds.left && ballBounds.left < brickBounds.left + brickBounds.width)
+            {
+                m_speed.y = -m_speed.y; 
+            }
+        }
 
-	if (ballX < brickX + brickW && ballX + ballW > brickX && ballY < brickY + brickH && ballH + ballY > brickY)
-	{
-		float overlapX;
-		float overlapY;
+        // Si la balle touche uniquement un côté, appliquer le rebond normal
+        if (ballCenterX < brickCenterX) {
+            m_speed.x = -m_speed.x;  // Collide avec le côté gauche
+        }
+        else {
+            m_speed.x = -m_speed.x;  // Collide avec le côté droit
+        }
 
-		if (ballX < brickX)
-			overlapX = ballX + ballW - brickX;
-		else
-			overlapX = brickX + brickW - ballX;
+        if (ballCenterY < brickCenterY) {
+            m_speed.y = -m_speed.y;  // Collide avec le côté supérieur
+        }
+        else {
+            m_speed.y = -m_speed.y;  // Collide avec le côté inférieur
+        }
 
-		if (ballY > brickY)
-			overlapY = ballY + ballH - brickY;
-		else
-			overlapY = brickY + brickH - ballY;
+        return true;
+    }
 
-		if (overlapX < overlapY)
-			m_speed.y = -m_speed.y;
-		else
-			m_speed.x = -m_speed.x;
-
-		return true;
-	}
-
-	return false;
+    return false;  
 }
+
 
 
 

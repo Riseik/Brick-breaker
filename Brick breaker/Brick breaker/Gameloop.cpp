@@ -20,9 +20,9 @@ void Gameloop::Loop()
 			Brick* brick = gl_sceneManager->GetActualScene()->GetBrick()->at(i);
 			if (brick != nullptr && b->CheckBrickCollision(brick)) {
 				if (brick->BrickDamage()) {
-					gl_sceneManager->GetActualScene()->GetBrick()->at(i) = nullptr;
+					gl_sceneManager->GetActualScene()->GetBrick()->erase(std::remove(gl_sceneManager->GetActualScene()->GetBrick()->begin(), gl_sceneManager->GetActualScene()->GetBrick()->end(), brick), gl_sceneManager->GetActualScene()->GetBrick()->end()) ;
 					brick->Destroy();
-					//gl_sceneManager->GetActualScene()->DestroyBrick(brick)
+					break;
 				}
 			}
 		}
