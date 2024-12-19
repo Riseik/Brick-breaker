@@ -1,5 +1,6 @@
 #pragma once
 #include "Object.h"
+#include "AllInclude.h"
 
 class Ball : public Object
 {
