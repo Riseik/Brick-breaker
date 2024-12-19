@@ -16,15 +16,20 @@ void Gameloop::Loop()
 		b->CheckScreenCollision();
 		b->CheckPlatformCollision(gl_platform->GetSprite());
 
-		for (int i = 0; i < gl_sceneManager->GetActualScene()->GetBrick()->size();i++) {
-			Brick* brick = gl_sceneManager->GetActualScene()->GetBrick()->at(i);
-			if (brick != nullptr && b->CheckBrickCollision(brick)) {
-				if (brick->BrickDamage()) {
-					gl_sceneManager->GetActualScene()->GetBrick()->erase(std::remove(gl_sceneManager->GetActualScene()->GetBrick()->begin(), gl_sceneManager->GetActualScene()->GetBrick()->end(), brick), gl_sceneManager->GetActualScene()->GetBrick()->end()) ;
-					brick->Destroy();
-					break;
+		if (gl_sceneManager->GetActualScene()->GetBrick()->size() != 0) {
+			for (int i = 0; i < gl_sceneManager->GetActualScene()->GetBrick()->size(); i++) {
+				Brick* brick = gl_sceneManager->GetActualScene()->GetBrick()->at(i);
+				if (brick != nullptr && b->CheckBrickCollision(brick)) {
+					if (brick->BrickDamage()) {
+						gl_sceneManager->GetActualScene()->GetBrick()->erase(std::remove(gl_sceneManager->GetActualScene()->GetBrick()->begin(), gl_sceneManager->GetActualScene()->GetBrick()->end(), brick), gl_sceneManager->GetActualScene()->GetBrick()->end());
+						brick->Destroy();
+						break;
+					}
 				}
 			}
+		}
+		else {
+			gl_sceneManager->ChangeScene();
 		}
 		window->clear();
 		Draw();
@@ -53,10 +58,10 @@ void Gameloop::Draw()
 	//window->draw(shape);
 	window->draw(gl_platform->GetSprite());
 	for (Brick* brick : *gl_sceneManager->GetActualScene()->GetBrick()) {
-			window->draw(brick->GetSprite());
+		window->draw(brick->GetSprite());
 	}
 	//gl_sceneManager.GetActualScene()->DrawBrick(window);
-	
+
 	window->draw(gl_platform->GetSprite());
 	window->draw(b->GetSprite());
 }

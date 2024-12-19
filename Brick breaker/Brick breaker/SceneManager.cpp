@@ -21,13 +21,15 @@ SceneManager::~SceneManager()
 void SceneManager::CreateNextScene()
 {
 	Scene a = Scene();
+	Scene b = Scene();
 	sm_Order.push(a);
+	sm_Order.push(b);
 }
 
 void SceneManager::ChangeScene()
 {
 	sm_Order.pop();
-	sm_Order.front().LoadScene();
+	CreateNextScene();
 }
 
 Ball* SceneManager::GetBall()
