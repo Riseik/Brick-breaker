@@ -3,7 +3,7 @@
 Ball::Ball()
 {
 	m_TexturePath = "ressource/TennisBall.png";
-	m_pos = { WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2 };
+	m_pos = { BALL_POS_X,BALL_POS_Y };
 	m_scale = { 0.01f, 0.01f };
 	LoadTexture(m_TexturePath);
 	m_sprite.setOrigin(m_texture.getSize().x / 2, m_texture.getSize().y / 2);
@@ -139,6 +139,7 @@ void Ball::Move()
 	m_sprite.setPosition(m_pos);
 }
 
-void Ball::Move(float, float)
+void Ball::Move(float x, float y)
 {
+    m_pos = { x, y };
 }

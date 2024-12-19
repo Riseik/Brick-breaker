@@ -30,6 +30,7 @@ void Gameloop::Loop()
 		}
 		else {
 			gl_sceneManager->ChangeScene();
+			b->Move(BALL_POS_X, BALL_POS_Y);
 		}
 		window->clear();
 		Draw();
