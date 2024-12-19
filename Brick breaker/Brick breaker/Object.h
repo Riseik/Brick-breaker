@@ -1,5 +1,5 @@
 #pragma once
-#include "AllInclude.h"
+#include "globals.h"
 #include "iostream"
 
 class Object

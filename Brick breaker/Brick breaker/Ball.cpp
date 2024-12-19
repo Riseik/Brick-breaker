@@ -29,12 +29,12 @@ void Ball::CheckPlatformCollision(sf::Sprite spritePlatform)
 
 		int sizePlatformX = spritePlatform.getTexture()->getSize().x * spritePlatform.getScale().x;
 		float relativePosition = ((m_pos.x - spritePlatform.getPosition().x) / (sizePlatformX / 2));
-		float speedIncrease = 0.1f;
+		float speedIncrease = 0.5f;
 		m_speed.x = m_speed.x + speedIncrease * relativePosition;
-		if (m_speed.x > 0.1f)
-			m_speed.x = 0.1f;
-		if (m_speed.x < -0.1f)
-			m_speed.x = -0.1f;
+		if (m_speed.x > 0.5f)
+			m_speed.x = 0.5f;
+		if (m_speed.x < -0.5f)
+			m_speed.x = -0.5f;
 	}
 }
 
@@ -111,7 +111,7 @@ bool Ball::CheckBrickCollision(Brick* brick)
         {
             if (ballBounds.top + ballBounds.height > brickBounds.top && ballBounds.top < brickBounds.top + brickBounds.height)
             {
-                m_speed.x = -m_speed.x; 
+                m_speed.y = -m_speed.y; 
             }
         }
 
@@ -120,23 +120,8 @@ bool Ball::CheckBrickCollision(Brick* brick)
         {
             if (ballBounds.left + ballBounds.width > brickBounds.left && ballBounds.left < brickBounds.left + brickBounds.width)
             {
-                m_speed.y = -m_speed.y; 
+                m_speed.x = -m_speed.x; 
             }
-        }
-
-        // Si la balle touche uniquement un côté, appliquer le rebond normal
-        if (ballCenterX < brickCenterX) {
-            m_speed.x = -m_speed.x;  // Collide avec le côté gauche
-        }
-        else {
-            m_speed.x = -m_speed.x;  // Collide avec le côté droit
-        }
-
-        if (ballCenterY < brickCenterY) {
-            m_speed.y = -m_speed.y;  // Collide avec le côté supérieur
-        }
-        else {
-            m_speed.y = -m_speed.y;  // Collide avec le côté inférieur
         }
 
         return true;

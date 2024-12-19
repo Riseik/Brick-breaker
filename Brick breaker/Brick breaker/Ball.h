@@ -1,6 +1,6 @@
 #pragma once
 #include "Object.h"
-#include "AllInclude.h"
+#include "globals.h"
 #include "Brick.h"
 
 class Ball : public Object

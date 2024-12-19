@@ -68,7 +68,7 @@
     <ClInclude Include="SceneManager.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="AllInclude.h">
+    <ClInclude Include="globals.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
@@ -79,5 +79,8 @@
     <Image Include="ressource\TennisBall.png">
       <Filter>Fichiers de ressources</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="ressource\Inlanders Demo.otf" />
   </ItemGroup>
 </Project>

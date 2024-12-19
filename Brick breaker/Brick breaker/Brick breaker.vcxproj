@@ -143,7 +143,7 @@
     <ClCompile Include="SceneManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AllInclude.h" />
+    <ClInclude Include="globals.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Ball.h" />
     <ClInclude Include="Brick.h" />
