@@ -8,16 +8,14 @@ Gameloop::Gameloop(sf::RenderWindow* window)
 	Loop();
 }
 
-void Gameloop::SetSprites()
-{
-	shape.setRadius(100.f);
-	shape.setFillColor(sf::Color::Green);
-}
-
 void Gameloop::Loop()
 {
 	while (window->isOpen()) {
 		ManageEvents();
+
+		b->Move();
+		b->CheckScreenCollision();
+		b->CheckPlatformCollision(p->GetSprite());
 
 		window->clear();
 		Draw();
@@ -32,10 +30,6 @@ void Gameloop::ManageEvents()
 	{
 		if (event.type == sf::Event::Closed)
 			window->close();
-
-		if (event.type == sf::Event::KeyPressed)
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
-				shape.setFillColor(sf::Color::Red);
 
 		if (event.type == sf::Event::MouseMoved) {
 			sf::Vector2i pixelPos = sf::Mouse::getPosition(*window);
@@ -54,4 +48,6 @@ void Gameloop::Draw()
 	}
 	//gl_sceneManager.GetActualScene()->DrawBrick(window);
 	
+	window->draw(p->GetSprite());
+	window->draw(b->GetSprite());
 }

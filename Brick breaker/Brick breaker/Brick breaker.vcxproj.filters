@@ -73,10 +73,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\..\Downloads\metal_brick.png">
+    <Image Include="ressource\metal_brick.png">
       <Filter>Fichiers de ressources</Filter>
     </Image>
-    <Image Include="ressource\metal_brick.png">
+    <Image Include="ressource\TennisBall.png">
       <Filter>Fichiers de ressources</Filter>
     </Image>
   </ItemGroup>

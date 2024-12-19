@@ -152,11 +152,14 @@
     <ClInclude Include="SceneManager.h" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\..\Downloads\metal_brick.png" />
     <Image Include="ressource\metal_brick.png" />
+    <Image Include="ressource\TennisBall.png" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Gameloop.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="ressource\Inlanders Demo.otf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
