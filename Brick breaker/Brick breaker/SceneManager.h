@@ -15,10 +15,12 @@ private:
 
 public:
 	SceneManager();
+	SceneManager(Ball*, Platform*);
 	~SceneManager();
 	void CreateNextScene();
 	void ChangeScene();
 	Ball* GetBall();
 	Platform* GetPlatform();
+	Scene* GetActualScene();
 };
 

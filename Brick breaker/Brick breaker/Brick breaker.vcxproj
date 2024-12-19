@@ -144,6 +144,7 @@
     <ClCompile Include="Score.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AllInclude.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Ball.h" />
     <ClInclude Include="Brick.h" />
@@ -156,7 +157,6 @@
     <Image Include="ressource\TennisBall.png" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="const.h" />
     <ClInclude Include="Gameloop.h" />
     <ClInclude Include="Score.h" />
     <ClInclude Include="sfml.h" />

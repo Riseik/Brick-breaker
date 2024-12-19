@@ -1,6 +1,5 @@
 #pragma once
-#include "sfml.h"
-#include "const.h"
+#include "AllInclude.h"
 #include "iostream"
 
 class Object
