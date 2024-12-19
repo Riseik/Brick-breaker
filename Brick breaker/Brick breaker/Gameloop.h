@@ -1,7 +1,8 @@
 #pragma once
-#include "AllInclude.h"
+#include "globals.h"
 #include "Platform.h"
 #include "SceneManager.h"
+#include "Score.h"
 
 #include "Ball.h"
 //include la classe scene
@@ -23,5 +24,6 @@ private:
 	SceneManager* gl_sceneManager;
 	Ball* gl_Ball;
 	Ball* b = new Ball();
+	Score* score = new Score();
 };
 

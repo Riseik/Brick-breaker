@@ -1,5 +1,5 @@
 #include "Scene.h"
-#include"AllInclude.h"
+#include "globals.h"
 
 Scene::Scene()
 {
