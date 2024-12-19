@@ -38,6 +38,28 @@ void Ball::CheckPlatformCollision(sf::Sprite spritePlatform)
 	}
 }
 
+bool Ball::CheckBrickCollision(Brick* brick)
+{
+	if (m_sprite.getGlobalBounds().intersects(brick->GetSprite().getGlobalBounds()) )
+	{
+		//m_speed.y = -m_speed.y;
+
+		int sizePlatformX = brick->GetSprite().getTexture()->getSize().x * brick->GetSprite().getScale().x;
+		float relativePosition = ((m_pos.x - brick->GetSprite().getPosition().x) / (sizePlatformX / 2)) / 2;
+		float speedIncrease = 0.1f;
+		m_speed.x = m_speed.x + speedIncrease * relativePosition;
+		if (m_speed.x > 0.1f)
+			m_speed.x = 0.1f;
+		if (m_speed.x < -0.1f)
+			m_speed.x = -0.1f;
+		std::cout << "hit\n";
+		return true;
+	}
+	return false;
+}
+
+
+
 void Ball::Move()
 {
 	m_pos = { m_pos.x + m_speed.x, m_pos.y + m_speed.y };

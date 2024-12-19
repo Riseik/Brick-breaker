@@ -21,7 +21,7 @@ Brick::Brick(float x, float y)
 
 Brick::~Brick()
 {
-	m_health = NULL;
+
 }
 
 bool Brick::BrickDamage()		//reduis la vie de la brick et renvoie true si elle doit etre detruite
@@ -35,7 +35,7 @@ bool Brick::BrickDamage()		//reduis la vie de la brick et renvoie true si elle d
 
 void Brick::Destroy()			//APPELLER CETTE FONCTION APRES AVOIR RETIRER L'OBJET DE LA SCENE LIST
 {
-	delete[] this;
+	delete this;
 }
 
 

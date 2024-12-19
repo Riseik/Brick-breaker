@@ -16,6 +16,16 @@ void Gameloop::Loop()
 		b->CheckScreenCollision();
 		b->CheckPlatformCollision(gl_platform->GetSprite());
 
+		for (int i = 0; i < gl_sceneManager->GetActualScene()->GetBrick()->size();i++) {
+			Brick* brick = gl_sceneManager->GetActualScene()->GetBrick()->at(i);
+			if (brick != nullptr && b->CheckBrickCollision(brick)) {
+				if (brick->BrickDamage()) {
+					gl_sceneManager->GetActualScene()->GetBrick()->at(i) = nullptr;
+					brick->Destroy();
+					//gl_sceneManager->GetActualScene()->DestroyBrick(brick)
+				}
+			}
+		}
 		window->clear();
 		Draw();
 		window->display();
@@ -42,8 +52,9 @@ void Gameloop::Draw()
 {
 	//window->draw(shape);
 	window->draw(gl_platform->GetSprite());
-	for (int i = 0; i < NUMBERBRICK; i++) {
-		window->draw(gl_sceneManager->GetActualScene()->GetBrick(i)->GetSprite());
+	for (Brick* brick : *gl_sceneManager->GetActualScene()->GetBrick()) {
+		if(brick!= nullptr)
+			window->draw(brick->GetSprite());
 	}
 	//gl_sceneManager.GetActualScene()->DrawBrick(window);
 	

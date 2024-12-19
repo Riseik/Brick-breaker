@@ -1,6 +1,7 @@
 #pragma once
 #include "Object.h"
 #include "AllInclude.h"
+#include "Brick.h"
 
 class Ball : public Object
 {
@@ -9,7 +10,7 @@ public:
 	~Ball();
 	void CheckScreenCollision();
 	void CheckPlatformCollision(sf::Sprite spritePlatform);
-	bool CheckBrickCollision(sf::Vector2f posBrick, sf::Vector2i sizeBrick);
+	bool CheckBrickCollision(Brick* brick);
 	void Move();
 	void Move(float, float) override;
 
