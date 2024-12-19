@@ -12,16 +12,13 @@ Brick::Brick(float x, float y)
 {
 	m_TexturePath = "ressource/WoodenBoxResize.png";
 	m_pos = { x,y };
-	m_scale = { BRICK_WIDTH, BRICK_HEIGHT };
-	//m_scale = { 0.001f * BRICK_WIDTH,0.001f * BRICK_HEIGHT };
 	LoadTexture(m_TexturePath);
-	sf::Vector2f scale = m_sprite.getScale();
-	m_sprite.setScale(sf::Vector2f(10/scale.x, 5/scale.y));
+	m_sprite.setScale({ WINDOW_WIDTH / 10.f / (float)m_texture.getSize().x, WINDOW_HEIGHT / 15.f / (float)m_texture.getSize().y });
 }
 
 Brick::~Brick()
 {
-	m_health = NULL;
+
 }
 
 bool Brick::BrickDamage()		//reduis la vie de la brick et renvoie true si elle doit etre detruite
@@ -35,7 +32,7 @@ bool Brick::BrickDamage()		//reduis la vie de la brick et renvoie true si elle d
 
 void Brick::Destroy()			//APPELLER CETTE FONCTION APRES AVOIR RETIRER L'OBJET DE LA SCENE LIST
 {
-	delete[] this;
+	delete this;
 }
 
 

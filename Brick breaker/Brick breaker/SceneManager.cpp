@@ -5,6 +5,8 @@ SceneManager::SceneManager()
 	ball = Ball();
 	platform = Platform();
 	CreateNextScene();
+	CreateNextScene();
+	
 }
 
 SceneManager::SceneManager(Ball* ballpt , Platform* platformpt)
@@ -22,13 +24,12 @@ void SceneManager::CreateNextScene()
 {
 	Scene a = Scene();
 	sm_Order.push(a);
-	sm_Order.back().CreateBricks();
 }
 
 void SceneManager::ChangeScene()
 {
 	sm_Order.pop();
-	sm_Order.front().LoadScene();
+	CreateNextScene();
 }
 
 Ball* SceneManager::GetBall()

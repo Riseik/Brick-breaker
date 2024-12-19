@@ -25,7 +25,7 @@ void Scene::CreateBricks()
 			x = 0;
 			y += BRICK_HEIGHT ;
 		}
-		s_Bricks.at(i) = new Brick(x, y);
+		s_Bricks.push_back( new Brick(x, y));
 		x += BRICK_WIDTH;
 	}
 	//for (int j = 0; j < 10; j++) {
@@ -38,13 +38,7 @@ void Scene::CreateBricks()
 	//}
 }
 
-Brick* Scene::GetBrick(int pos)
+std::vector<Brick*>* Scene::GetBrick()
 {
-	return s_Bricks.at(pos);
-}
-
-void Scene::DrawBrick(sf::RenderWindow* window)
-{
-	for (Brick* a : s_Bricks)
-		window->draw(a->GetSprite());
+	return &s_Bricks;
 }

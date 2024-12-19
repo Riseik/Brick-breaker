@@ -96,4 +96,7 @@
     <Font Include="ressource\InlandersDemo.otf" />
     <Font Include="ressource\SquareOne.ttf" />
   </ItemGroup>
+  <ItemGroup>
+    <Font Include="ressource\Inlanders Demo.otf" />
+  </ItemGroup>
 </Project>

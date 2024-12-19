@@ -4,7 +4,7 @@
 class Scene
 {
 private:
-	std::array<Brick*, NUMBERBRICK>  s_Bricks ;
+	std::vector<Brick*>  s_Bricks ;
 
 
 public:
@@ -13,8 +13,7 @@ public:
 	void LoadScene();
 	void CreateBricks();
 
-	Brick* GetBrick(int pos);
-	void DrawBrick(sf::RenderWindow* window);
+	std::vector<Brick*>* GetBrick();
 
 };
 
