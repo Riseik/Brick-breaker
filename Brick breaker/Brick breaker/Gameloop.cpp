@@ -53,7 +53,6 @@ void Gameloop::Draw()
 	//window->draw(shape);
 	window->draw(gl_platform->GetSprite());
 	for (Brick* brick : *gl_sceneManager->GetActualScene()->GetBrick()) {
-		if(brick!= nullptr)
 			window->draw(brick->GetSprite());
 	}
 	//gl_sceneManager.GetActualScene()->DrawBrick(window);
